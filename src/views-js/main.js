@@ -1,5 +1,3 @@
-const imports = require('./modules/imports')
-
 module.exports = [
   {
     position:"lower",

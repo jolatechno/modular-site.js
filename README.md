@@ -20,6 +20,10 @@ __position__ describe if the link is in the top or lower navbar,
 
 if __logginRequire__ is `true`, the view can only be accessed if the user is logged in, if `false`, it can can only be accessed if the user is not logged in, if `undefined` it can be accessed in both case.
 
-Helper functions and imports are located in the __src/views-js/modules/imports.js__ file.
+Helper functions are located in the __src/views-js/modules/functions.js__ file.
+
+Imports are located in the __src/views-js/modules/library.js__ file.
+
+Constants are located in the __src/views-js/modules/constants.js__ file.
 
 __ejs__ views are located in the __src/views__ folder.

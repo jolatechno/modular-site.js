@@ -1,36 +1,19 @@
-const imports = require('./modules/imports')
+const library = require('./modules/library');
+const functions = require('./modules/functions');
 
-const va = imports.library.validator;
-const db = imports.library.db;
-const hash = imports.functions.hash;
-const log_err = imports.functions.log_err;
+const va = library.validator;
+const db = library.db;
+const hash = functions.hash;
+const log_err = functions.log_err;
 
 module.exports = [
-  {
-    link: "/donate/",
-    post: links => function (req, res) {
-      imports.functions.charge(req.body.amount, req.body.stripeEmail, req.body.stripeToken, "donation", function (charge) {
-        if(charge){
-          console.log(charge);
-          mail(req.body.stripeEmail, "donation", "donation confirmation", function(err, info){
-            if(req.headers.referer)
-              return res.redirect(imports.library.url.parse(req.headers.referer).pathname + '?message=' + encodeURIComponent("donation sucessful"));
-            return res.redirect('/?message=' + encodeURIComponent("donation sucessful"));
-          });
-        }
-        if(req.headers.referer)
-          return res.redirect(imports.library.url.parse(req.headers.referer).pathname + '?message=' + encodeURIComponent("donation failed"));
-        return res.redirect('/?message=' + encodeURIComponent("donation failed"));
-      });
-    }
-  },
   {
     position:"upper",
     link: "/login/",
     label: "Login",
     logginRequire: false,
     get: links => function (req, res) {
-      res.render('base/login', {isLoggedIn:false, message:req.query.message, links:links, stripe_public_key:imports.constants.stripe_public_key});
+      res.render('base/login', {isLoggedIn:false, message:req.query.message, links:links});
     },
     post: links => function (req, res) {
       const password = req.body.password;
@@ -65,7 +48,7 @@ module.exports = [
     label: "Register",
     logginRequire: false,
     get: links => function (req, res) {
-      res.render('base/register', {isLoggedIn:false, message:req.query.message, links:links, stripe_public_key:imports.constants.stripe_public_key});
+      res.render('base/register', {isLoggedIn:false, message:req.query.message, links:links});
     },
     post: links => function (req, res) {
       const password = req.body.password;
@@ -124,7 +107,7 @@ module.exports = [
     label: "Profile",
     logginRequire: true,
     get: links => function (req, res) {
-      return res.render('base/profile', {isLoggedIn:true, message:req.query.message, links:links, stripe_public_key:imports.constants.stripe_public_key, email:req.session.email, username:req.session.user_id});
+      return res.render('base/profile', {isLoggedIn:true, message:req.query.message, links:links, email:req.session.email, username:req.session.user_id});
     }
   },
   {

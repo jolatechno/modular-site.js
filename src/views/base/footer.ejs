@@ -1,20 +1,2 @@
 <div class="footer_container">
-  <form>
-    <input name="amount" type="number" class="ghost-input" placeholder="price" required>
-    <script src="https://js.stripe.com/v3">
-      var stripe = Stripe(<%= stripe_public_key %>);
-      stripe.redirectToCheckout({
-        items: [
-          {sku: 'sku_FhSYKQRerpoIdU', quantity: 1}
-        ],
-        successUrl: '/?message=donation%successfull',
-        cancelUrl: '/?donation%20failed',
-        <% if(isLoggedIn){ %>
-          customerEmail:<%= email %>,
-        <% } %>
-        submitType: 'donate',
-      }).then((result) => {});
-    </script>
-    <button id="checkout-button">donate</button>
-  </form>
 </div>

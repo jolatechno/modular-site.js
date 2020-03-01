@@ -1,45 +1,7 @@
-const constants = {
-  port:8080,
+constants = require('./constants.json');
+library = require('./library.js');
 
-  admin_password:"admin_password",
-
-  app_session:{
-    key: ["user_id", "email"],
-    secret: "ThisontGetDiscovered",
-    resave: true,
-    saveUninitialized: false,
-    cookie: {
-      secure: false,
-      expires: 600000
-    }
-  },
-
-  database: "./database.db",
-
-  email:{
-    service: "gmail",
-    auth: {
-      user: "email@gmail.com",
-      pass: "email_password"
-    }
-  },
-
-  initial_command: ["CREATE TABLE IF NOT EXISTS user (user_id TEXT NOT NULL UNIQUE PRIMARY KEY, email TEXT NOT NULL UNIQUE, password TEXT NOT NULL) WITHOUT ROWID",
-    "CREATE TABLE IF NOT EXISTS purchases (email TEXT NOT NULL, amount INT NOT NULL, type TEXT NOT NULL)",
-    "CREATE TABLE IF NOT EXISTS errors (err TEXT NOT NULL, date DATETIME DEFAULT CURRENT_TIMESTAMP)"]
-}
-
-const sqlite3 = require('sqlite3').verbose();
-
-const library = {
-  url: require('url'),
-  db: new sqlite3.Database(constants.database),
-  nodemailer: require('nodemailer').createTransport(constants.email),
-  fs: require('fs-extra'),
-  validator: require("validator"),
-}
-
-const functions = {
+module.exports = {
   links: function(links, isLoggedIn) {
     return {
       upper: links.filter(page => page.position == "upper").map(page => [page.link, page.label, page.logginRequire]),
@@ -93,10 +55,4 @@ const functions = {
       return true;
     return false;
   },
-}
-
-module.exports = {
-  constants: constants,
-  library: library,
-  functions: functions
 }
