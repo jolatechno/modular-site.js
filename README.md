@@ -24,6 +24,6 @@ Helper functions are located in the __src/views-js/modules/functions.js__ file.
 
 Imports are located in the __src/views-js/modules/library.js__ file.
 
-Constants are located in the __src/views-js/modules/constants.js__ file.
+Constants are located in the __src/views-js/modules/constants.json__ file.
 
 __ejs__ views are located in the __src/views__ folder.
