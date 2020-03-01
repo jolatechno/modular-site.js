@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <% include ./header %>
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+        <form action="/login" method="post">
+          <label for="username"><i class="fa fa-user"></i>username</label>
+          <input name="username" type="text" class="ghost-input" placeholder="enter your username" required>
+          <label for="username"><i class="fa fa-key"></i>password</label>
+          <input name="password" type="password" class="ghost-input" placeholder="enter your password" required>
+          <input type="submit" class="ghost-button" value="login">
+        </form>
+      </fieldset>
+    </div>
+    <footer>
+      <% include ./footer %>
+    </footer>
+  </body>
+</html>

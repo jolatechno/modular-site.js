@@ -1,0 +1,24 @@
+{
+  "name": "js_site_v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "crypto": "^1.0.1",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "fs-extra": "^8.1.0",
+    "nodemailer": "^6.3.0",
+    "sqlite3": "^4.1.0",
+    "stripe": "^7.8.0",
+    "url": "^0.11.0",
+    "validator": "^11.1.0"
+  }
+}

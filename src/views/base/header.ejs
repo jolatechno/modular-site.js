@@ -1,0 +1,30 @@
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="shortcut icon" <link rel="shortcut icon" type="image/png" href="/logo.png"/>
+<img src="logo.png" class="logo">
+<div class="topnav">
+  <il>
+      <a class="active" href="/">Home</a>
+    <% links.upper.forEach(function(link){ %>
+      <% if(typeof link[2] == "undefined" || link[2] == isLoggedIn) { %>
+        <a href=<%= link[0] %>><%= link[1] %></a>
+      <% } %>
+    <% }) %>
+  </il>
+</div>
+<div class="topnav">
+  <il>
+    <% links.lower.forEach(function(link){ %>
+      <% if(typeof link[2] == "undefined" || link[2] == isLoggedIn) { %>
+        <a href=<%= link[0] %>><%= link[1] %></a>
+      <% } %>
+    <% }) %>
+  </il>
+</div>
+<% if (message) { %>
+  <div class="messages">
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none'; this.parentElement.parentElement.style.display='none';">&times;</span>
+      <%= message %>
+    </div>
+  </div>
+<% } %>

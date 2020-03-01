@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <% include ./base/header %>
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+        <a href="/download_public/test.txt">download</a>
+      </fieldset>
+    </div>
+    <%if (isLoggedIn) { %>
+      <div class="container">
+        <fieldset>
+          <a href="/upload">upload</a>
+        </fieldset>
+      </div>
+    <% } %>
+    </div>
+    <div class="container">
+      <h1>welcome</h1>
+    </div>
+    <footer>
+      <% include ./base/footer %>
+    </footer>
+  </body>
+</html>

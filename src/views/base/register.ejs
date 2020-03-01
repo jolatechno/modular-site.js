@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <% include ./header %>
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+        <form action="/register" method="post">
+          <label for="email"><i class="fa fa-envelope"></i> Email</label>
+          <input name="email" type="text" class="ghost-input" placeholder="enter an email adress" required>
+          <label for="username"><i class="fa fa-user"></i>username</label>
+          <input name="username" type="text" class="ghost-input" placeholder="enter a username" required>
+          <label for="username"><i class="fa fa-key"></i>password</label>
+          <input name="password" type="password" class="ghost-input" placeholder="enter a password" required>
+          <input name="confirmation" type="password" class="ghost-input" placeholder="re-enter your password" required>
+          <input type="submit" class="ghost-button" value="register">
+        </form>
+      </fieldset>
+    </div>
+    <footer>
+      <% include ./footer %>
+    </footer>
+  </body>
+</html>
