@@ -1,13 +1,13 @@
 {
-  "name": "js_site_v2",
+  "name": "modular-site.js",
   "version": "1.0.0",
-  "description": "",
+  "description": "modular boiler-plate site built using node.js and express",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "joseph touzet",
+  "license": "GPL-3.0",
   "dependencies": {
     "body-parser": "^1.19.0",
     "crypto": "^1.0.1",
