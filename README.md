@@ -1,6 +1,10 @@
 # modular-site.js
 modular boiler-plate site built using node.js and express
 
+## initialization
+
+use `npm install package.json` in the __/src__ directory.
+
 ## usage
 Views are located in the __src/views-js/main.js__ file with the following format:
 

@@ -15,5 +15,5 @@ joined.forEach(page => {
 });
 
 app.get('/', function(req, res) {
-  res.render('home', {isLoggedIn:functions.isLoggedIn(req), message:req.query.message, links:links email:req.session.email});
+  res.render('home', {isLoggedIn:functions.isLoggedIn(req), message:req.query.message, links:links, email:req.session.email});
 });
