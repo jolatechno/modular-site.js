@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "description": "modular boiler-plate site built using node.js and express",
   "main": "index.js",
-  "scripts": {
-  },
   "author": "joseph touzet",
   "license": "GPL-3.0",
   "dependencies": {
