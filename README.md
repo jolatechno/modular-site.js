@@ -10,7 +10,7 @@ Views are located in the __src/views-js/main.js__ file with the following format
 
 ```javascript
 {
-    position:"lower" or "lower",
+    position:"lower" or "upper",
     link: "/link",
     label: "Name",
     logginRequire: false, true, or undefined
